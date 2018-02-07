@@ -20,6 +20,10 @@ public class Model {
     }
 
     public int Disminuir() {
-        return --contador;
+        if (contador != 0) {
+            return --contador;
+        }else{
+            return contador;
+        }
     }
 }
