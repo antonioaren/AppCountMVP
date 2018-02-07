@@ -37,7 +37,7 @@ public class MainActivityTest02 {
     @Test
     public void mainActivityTest02() {
         ViewInteraction button = onView(
-                allOf(withId(R.id.button), withText("+"),
+                allOf(withId(R.id.buttonMas), withText("+"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.support.constraint.ConstraintLayout")),
@@ -47,7 +47,7 @@ public class MainActivityTest02 {
         button.perform(click());
 
         ViewInteraction button2 = onView(
-                allOf(withId(R.id.button), withText("+"),
+                allOf(withId(R.id.buttonMas), withText("+"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.support.constraint.ConstraintLayout")),

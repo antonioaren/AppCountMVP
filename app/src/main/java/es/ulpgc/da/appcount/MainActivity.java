@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static android.view.View.*;
+
 public class MainActivity extends Activity {
     private TextView pantalla;
-    private Button boton1;
+    private Button botonMas;
+    private Button botonMenos;
     private Presenter presenter;
 
 
@@ -21,15 +24,25 @@ public class MainActivity extends Activity {
 
         presenter = new Presenter(this);
         pantalla = findViewById(R.id.textView);
-        boton1 = findViewById(R.id.button);
+
+        botonMas = findViewById(R.id.buttonMas);
+        botonMenos = findViewById(R.id.buttonMenos);
 
 
-        boton1.setOnClickListener(new View.OnClickListener() {
+        botonMas.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Log.d("MainActivity", "boton pulsado");
+                Log.d("MainActivity", "Boton Incrementar pulsado");
                 presenter.ButtonClickedAumentar();
+            }
+        });
+
+        botonMenos.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity","Boton Decrementar pulsado");
+                presenter.ButtonClickedDecrementar();
             }
         });
 

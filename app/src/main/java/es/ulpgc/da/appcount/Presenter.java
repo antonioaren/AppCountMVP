@@ -24,4 +24,9 @@ public class Presenter {
         Valor = model.Aumentar();
         view.setTextDisplay(""+Valor);
     }
+
+    public void ButtonClickedDecrementar() {
+        view.setTextDisplay(""+model.Disminuir());
+    }
+
 }
