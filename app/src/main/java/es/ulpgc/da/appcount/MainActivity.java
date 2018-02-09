@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
         Log.d("MainActivity", "Arrancando mi App");
 
         presenter = new Presenter(this);
+
         pantalla = findViewById(R.id.textView);
 
         botonMas = findViewById(R.id.buttonMas);

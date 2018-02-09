@@ -7,7 +7,7 @@ package es.ulpgc.da.appcount;
 public class Presenter {
     private MainActivity view;
     private Model model;
-    private int Valor = 0;
+    private int Valor = 15; //Es el presentador quien indica en que valor se empieza.
 
 
     public Presenter(MainActivity mainActivity) {
@@ -21,8 +21,7 @@ public class Presenter {
     }
 
     public void ButtonClickedAumentar(){
-        Valor = model.Aumentar();
-        view.setTextDisplay(""+Valor);
+        view.setTextDisplay(""+model.Aumentar());
     }
 
     public void ButtonClickedDecrementar() {
