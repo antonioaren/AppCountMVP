@@ -15,11 +15,11 @@ public class Model {
         this.contador = contador;
     }
 
-    public int Aumentar() {
+    public int aumentar() {
         return ++contador;
     }
 
-    public int Disminuir() {
+    public int disminuir() {
         if (contador != 0) {
             return --contador;
         }else{

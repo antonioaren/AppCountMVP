@@ -5,27 +5,27 @@ package es.ulpgc.da.appcount;
  */
 
 public class Presenter {
-    private MainActivity view;
-    private Model model;
-    private int Valor = 15; //Es el presentador quien indica en que valor se empieza.
+    private Mediador mediador;
+    private int Valor = 0; //Es el presentador quien indica en que valor se empieza.
 
+    //protected final String TAG = this.getClass().getSimpleName();
+    //Lo que hace es que te pone el valor del TAG automáticamente.
 
-    public Presenter(MainActivity mainActivity) {
-        this.view = mainActivity;
-        model=new Model();
+    public Presenter() {
+        mediador = new Mediador();
     }
 
     public void init(){
-        model.setContador(Valor);
-        view.setTextDisplay(""+model.getContador());
+        mediador.getModel().setContador(Valor);
+        mediador.getView().setTextDisplay(""+mediador.getModel().getContador());
     }
 
-    public void ButtonClickedAumentar(){
-        view.setTextDisplay(""+model.Aumentar());
+    public void buttonClickedAumentar(){
+        mediador.getView().setTextDisplay(""+mediador.getModel().aumentar());
     }
 
-    public void ButtonClickedDecrementar() {
-        view.setTextDisplay(""+model.Disminuir());
+    public void buttonClickedDecrementar() {
+        mediador.getView().setTextDisplay(""+mediador.getModel().disminuir());
     }
 
 }

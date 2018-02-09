@@ -13,7 +13,8 @@ public class MainActivity extends Activity {
     private TextView pantalla;
     private Button botonMas;
     private Button botonMenos;
-    private Presenter presenter;
+    //private Presenter presenter;
+    private Mediador mediador;
 
 
     @Override
@@ -22,7 +23,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "Arrancando mi App");
 
-        presenter = new Presenter(this);
+       //presenter = new Presenter(this);
+        mediador = new Mediador(this);
+
 
         pantalla = findViewById(R.id.textView);
 
@@ -35,7 +38,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Log.d("MainActivity", "Boton Incrementar pulsado");
-                presenter.ButtonClickedAumentar();
+                mediador.getPresenter().buttonClickedAumentar();
             }
         });
 
@@ -43,11 +46,11 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Log.d("MainActivity","Boton Decrementar pulsado");
-                presenter.ButtonClickedDecrementar();
+                mediador.getPresenter().buttonClickedDecrementar();
             }
         });
 
-        presenter.init();
+        mediador.getPresenter().init();
     }
 
     public void setTextDisplay(String valor){
