@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import static android.view.View.*;
+import static android.view.View.OnClickListener;
 
 public class MainActivity extends Activity {
+    private Mediador mediador;
     private TextView pantalla;
     private Button botonMas;
     private Button botonMenos;
-    //private Presenter presenter;
-    private Mediador mediador;
+
 
 
     @Override
@@ -23,12 +23,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "Arrancando mi App");
 
-       //presenter = new Presenter(this);
-        mediador = new Mediador(this);
-
+        mediador = (Mediador) getApplication();
+        mediador.setView(this);
 
         pantalla = findViewById(R.id.textView);
-
         botonMas = findViewById(R.id.buttonMas);
         botonMenos = findViewById(R.id.buttonMenos);
 
@@ -49,6 +47,7 @@ public class MainActivity extends Activity {
                 mediador.getPresenter().buttonClickedDecrementar();
             }
         });
+
 
         mediador.getPresenter().init();
     }

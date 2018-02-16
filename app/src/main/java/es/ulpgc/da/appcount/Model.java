@@ -5,7 +5,7 @@ package es.ulpgc.da.appcount;
  */
 
 public class Model {
-    private int contador;
+    private int contador = 0;
 
     public int getContador() {
         return contador;
